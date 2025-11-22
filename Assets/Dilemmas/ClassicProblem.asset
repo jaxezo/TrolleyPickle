@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 389fb792b0e5ede409514e56a9b4a436, type: 3}
+  m_Name: ClassicProblem
+  m_EditorClassIdentifier: 
+  title: The Classic
+  description: Your trolley is running down the right track with five people tied
+    to it. You may divert to the left track with only one person tied to it.
+  rightTrackSupport:
+  - framework: 0
+    text: You will not use the one person as a means to an end to save other people.
+      Additioanlly, you will not break the one person's autonomy.
+  - framework: 2
+    text: Pulling the lever is killing a person, which will heavily weigh on your
+      conscious. You can only care for others if you care for yourself first.
+  leftTrackSupport:
+  - framework: 1
+    text: More people would be happy by diverting the track. Five get to live instead
+      of only one.
