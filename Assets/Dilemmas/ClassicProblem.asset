@@ -12,17 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 389fb792b0e5ede409514e56a9b4a436, type: 3}
   m_Name: ClassicProblem
   m_EditorClassIdentifier: 
-  title: The Classic
-  description: Your trolley is running down the right track with five people tied
-    to it. You may divert to the left track with only one person tied to it.
+  title:
+    m_TableReference:
+      m_TableCollectionName: GUID:82d504f2990bd7340ac6d8b078b0cb64
+    m_TableEntryReference:
+      m_KeyId: 9978088775680
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:82d504f2990bd7340ac6d8b078b0cb64
+    m_TableEntryReference:
+      m_KeyId: 1210936451072
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   rightTrackSupport:
   - framework: 0
-    text: You will not use the one person as a means to an end to save other people.
-      Additioanlly, you will not break the one person's autonomy.
+    text:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - framework: 2
-    text: Pulling the lever is killing a person, which will heavily weigh on your
-      conscious. You can only care for others if you care for yourself first.
+    text:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   leftTrackSupport:
   - framework: 1
-    text: More people would be happy by diverting the track. Five get to live instead
-      of only one.
+    text:
+      m_TableReference:
+        m_TableCollectionName: 
+      m_TableEntryReference:
+        m_KeyId: 0
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
