@@ -10,6 +10,7 @@ public class TrolleyMovement : MonoBehaviour
 
     public TrainRail startRail;
     public float speed = 0.5f;
+    public float rotationCatchupSpeed = 1f;
 
     private Rigidbody rb;
     private float t;
@@ -41,12 +42,29 @@ public class TrolleyMovement : MonoBehaviour
 
         if (t >= 1)
         {
-            currentRail = currentRail.nextRail;
+            if (currentRail.HasAlternatePath)
+            {
+                if (direction == GameManager.SwitchDirection.Left)
+                {
+                    currentRail = currentRail.nextAlternateRail;
+                }
+                else
+                {
+                    currentRail = currentRail.nextRail;
+                }
+
+                OffSplitTrack();
+            }
+            else
+            {
+                currentRail = currentRail.nextRail;
+            }
+            
             t = 0;
 
             if (currentRail != null)
             {
-                if (currentRail.alternatePath != null)
+                if (currentRail.HasAlternatePath)
                 {
                     OnSplitTrack();
                 }
@@ -55,7 +73,7 @@ public class TrolleyMovement : MonoBehaviour
         else
         {
             Vector3 newPos = Vector3.zero;
-            Vector3 tangent = Vector3.zero;
+            Vector3 targetTangent = Vector3.zero;
 
             if (currentRail.alternatePath != null)
             {
@@ -63,24 +81,24 @@ public class TrolleyMovement : MonoBehaviour
                 {
                     case GameManager.SwitchDirection.Left:
                         newPos = currentRail.alternatePath.EvaluatePosition (t);
-                        tangent = currentRail.alternatePath.EvaluateTangent (t);
+                        targetTangent = currentRail.alternatePath.EvaluateTangent (t);
                         break;
                     case GameManager.SwitchDirection.Right:
                         newPos = currentRail.mainPath.EvaluatePosition (t);
-                        tangent = currentRail.mainPath.EvaluateTangent (t);
+                        targetTangent = currentRail.mainPath.EvaluateTangent (t);
                         break;
                 }
             }
             else
             {
                 newPos = currentRail.mainPath.EvaluatePosition (t);
-                tangent = currentRail.mainPath.EvaluateTangent (t);
+                targetTangent = currentRail.mainPath.EvaluateTangent (t);
             }
 
-            rb.MovePosition (newPos);
-            
-            Quaternion newRotation = Quaternion.LookRotation (tangent);
-            rb.rotation = newRotation;
+            transform.position = newPos;
+
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(targetTangent), rotationCatchupSpeed * Time.deltaTime);
+
         }
     }
     void OnSplitTrack ()

@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     const float SWITCH_FLIP_FIRERATE = 0.35f;
 
     public static GameManager singleton;
+
+    public Transform playerObject;
+
     public Dilemma[] dilemmas;
     public TMP_Text txt_DilemmaNumber;
     public TMP_Text txt_DilemmaTitle;
@@ -31,6 +34,8 @@ public class GameManager : MonoBehaviour
     private float nextSwitchFire = 0f;
     private SwitchDirection direction = SwitchDirection.Right;
     private bool switchChangeLocked = false;
+
+    public SwitchDirection Direction { get => direction; }
 
     public enum SwitchDirection
     {
@@ -100,11 +105,22 @@ public class GameManager : MonoBehaviour
     public void FlipSwitch ()
     {
         if (switchChangeLocked)
+        {
+            switch (Direction)
+            {
+                case SwitchDirection.Left:
+                    anim_Switch.Play ("LeftLocked");
+                    break;
+                case SwitchDirection.Right:
+                    anim_Switch.Play ("RightLocked");
+                    break;
+            }
             return;
+        }
 
         if (Time.time > nextSwitchFire)
         {
-            switch (direction)
+            switch (Direction)
             {
                 case SwitchDirection.Left:
                     anim_Switch.Play ("SwitchRight");
@@ -123,7 +139,7 @@ public class GameManager : MonoBehaviour
     {
         switchChangeLocked = true;
 
-        return direction;
+        return Direction;
     }
     public void OffFinalTrack ()
     {

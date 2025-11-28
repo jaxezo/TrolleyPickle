@@ -9,6 +9,7 @@ public class TrainRail : MonoBehaviour
     public SplineContainer mainPath;
     public SplineContainer alternatePath;
     public TrainRail nextRail;
+    public TrainRail nextAlternateRail;
     public float speedMultiplier = 1;
 
     private bool hasAlternatePath;
