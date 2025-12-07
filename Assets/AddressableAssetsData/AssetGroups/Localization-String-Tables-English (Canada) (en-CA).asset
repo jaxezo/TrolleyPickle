@@ -23,8 +23,26 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en-CA
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ef22478e14a6274c99b84e413842b42
+    m_Address: UtilitarianismDilemmaDialogue_en-CA
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-CA
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2a41ebafa0a85c84daa01af3f812fd21
     m_Address: Dialogue_en-CA
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-CA
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8cee8e586488e648a3530b7978ecb38
+    m_Address: DeontologyDilemmaDialogue_en-CA
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en-CA
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0a4c119a8256404f96c860e52637c0e
+    m_Address: CareDilemmaDialogue_en-CA
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-CA

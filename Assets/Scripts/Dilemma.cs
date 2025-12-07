@@ -16,5 +16,7 @@ public class Dilemma : ScriptableObject
 public class FrameworkResponse
 {
     public EthicalFrameworks.Frameworks framework;
-    public LocalizedString text;
+    public LocalizedString correctText;
+    public LocalizedString incorrectText;
+    public LocalizedString alternateText;
 }

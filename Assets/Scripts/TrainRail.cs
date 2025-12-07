@@ -12,9 +12,13 @@ public class TrainRail : MonoBehaviour
     public TrainRail nextAlternateRail;
     public float speedMultiplier = 1;
 
+    [SerializeField]
+    private bool isKillTrack = false;
+
     private bool hasAlternatePath;
 
     public bool HasAlternatePath { get => hasAlternatePath; }
+    public bool IsKillTrack { get => isKillTrack; }
 
     void Start()
     {

@@ -10,28 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: General Shared Data
+  m_Name: CareDilemmaDialogue Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: General
-  m_TableCollectionNameGuidString: 283d7a43bbf0085468b67d4c9ca52c0d
+  m_TableCollectionName: CareDilemmaDialogue
+  m_TableCollectionNameGuidString: cc04fddbc555d0342a956203a0a8b29a
   m_Entries:
-  - m_Id: 9981386752
-    m_Key: Dilemma
+  - m_Id: 17192828526592
+    m_Key: Dilemma1_Correct
     m_Metadata:
       m_Items: []
-  - m_Id: 4366671094472704
-    m_Key: Error
+  - m_Id: 17235602038784
+    m_Key: Dilemma1_Incorrect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17255147495424
+    m_Key: Dilemma1_Alt
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 8718963954755567641
+    rid: 7787280265032761348
   references:
     version: 2
     RefIds:
-    - rid: 8718963954755567641
+    - rid: 7787280265032761348
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
         asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1764058554186
+        m_CustomEpoch: 1765091741088

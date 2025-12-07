@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -31,6 +32,10 @@ public class TrolleyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ApplyTrolleyMovement();
+    }
+    void ApplyTrolleyMovement ()
+    {
         if (currentRail == null)
         {
             OutOfTrack();
@@ -42,63 +47,79 @@ public class TrolleyMovement : MonoBehaviour
 
         if (t >= 1)
         {
-            if (currentRail.HasAlternatePath)
-            {
-                if (direction == GameManager.SwitchDirection.Left)
-                {
-                    currentRail = currentRail.nextAlternateRail;
-                }
-                else
-                {
-                    currentRail = currentRail.nextRail;
-                }
+            DetermineNextTrack ();
+        }
+        else
+        {
+            MoveTrolley ();
+        }
+    }
+    void MoveTrolley ()
+    {
+        Vector3 newPos = Vector3.zero;
+        Vector3 targetTangent = Vector3.zero;
 
-                OffSplitTrack();
+        if (currentRail.alternatePath != null)
+        {
+            switch (direction)
+            {
+                case GameManager.SwitchDirection.Left:
+                    newPos = currentRail.alternatePath.EvaluatePosition (t);
+                    targetTangent = currentRail.alternatePath.EvaluateTangent (t);
+                    break;
+                case GameManager.SwitchDirection.Right:
+                    newPos = currentRail.mainPath.EvaluatePosition (t);
+                    targetTangent = currentRail.mainPath.EvaluateTangent (t);
+                    break;
+            }
+        }
+        else
+        {
+            newPos = currentRail.mainPath.EvaluatePosition (t);
+            targetTangent = currentRail.mainPath.EvaluateTangent (t);
+        }
+
+        transform.position = newPos;
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(targetTangent), rotationCatchupSpeed * Time.deltaTime);
+    }
+
+    void DetermineNextTrack ()
+    {
+        if (currentRail.HasAlternatePath)
+        {
+            if (direction == GameManager.SwitchDirection.Left)
+            {
+                currentRail = currentRail.nextAlternateRail;
             }
             else
             {
                 currentRail = currentRail.nextRail;
             }
-            
-            t = 0;
 
-            if (currentRail != null)
-            {
-                if (currentRail.HasAlternatePath)
-                {
-                    OnSplitTrack();
-                }
-            }
+            OffSplitTrack();
         }
         else
         {
-            Vector3 newPos = Vector3.zero;
-            Vector3 targetTangent = Vector3.zero;
-
-            if (currentRail.alternatePath != null)
+            if (currentRail.IsKillTrack)
             {
-                switch (direction)
-                {
-                    case GameManager.SwitchDirection.Left:
-                        newPos = currentRail.alternatePath.EvaluatePosition (t);
-                        targetTangent = currentRail.alternatePath.EvaluateTangent (t);
-                        break;
-                    case GameManager.SwitchDirection.Right:
-                        newPos = currentRail.mainPath.EvaluatePosition (t);
-                        targetTangent = currentRail.mainPath.EvaluateTangent (t);
-                        break;
-                }
+                OffKillTrack();
             }
-            else
+            currentRail = currentRail.nextRail;
+        }
+        
+        t = 0;
+
+        if (currentRail != null)
+        {
+            if (currentRail.HasAlternatePath)
             {
-                newPos = currentRail.mainPath.EvaluatePosition (t);
-                targetTangent = currentRail.mainPath.EvaluateTangent (t);
+                OnSplitTrack();
             }
-
-            transform.position = newPos;
-
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(targetTangent), rotationCatchupSpeed * Time.deltaTime);
-
+            else if (currentRail.IsKillTrack)
+            {
+                OnKillTrack ();
+            }
         }
     }
     void OnSplitTrack ()
@@ -109,8 +130,16 @@ public class TrolleyMovement : MonoBehaviour
     {
         GameManager.singleton.OffFinalTrack();
     }
+    void OnKillTrack ()
+    {
+        GameManager.singleton.OnKillTrack();
+    }
+    void OffKillTrack ()
+    {
+        GameManager.singleton.OffKillTrack ();
+    }
     void OutOfTrack ()
     {
-        
+        Debug.LogError ("End of the line");   
     }
 }

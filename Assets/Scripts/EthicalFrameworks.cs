@@ -9,7 +9,7 @@ public static class EthicalFrameworks
         Care
     }
 
-    public static string FrmaeworkToString(Frameworks framework)
+    public static string FrameworkToString(Frameworks framework)
     {
         switch (framework)
         {

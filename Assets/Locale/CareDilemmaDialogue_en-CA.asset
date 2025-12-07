@@ -10,20 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: General_en-CA
+  m_Name: CareDilemmaDialogue_en-CA
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: en-CA
-  m_SharedData: {fileID: 11400000, guid: 283d7a43bbf0085468b67d4c9ca52c0d, type: 2}
+  m_SharedData: {fileID: 11400000, guid: cc04fddbc555d0342a956203a0a8b29a, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 9981386752
-    m_Localized: Dilemma
+  - m_Id: 17192828526592
+    m_Localized: Placehodler1
     m_Metadata:
       m_Items: []
-  - m_Id: 4366671094472704
-    m_Localized: Error String
+  - m_Id: 17235602038784
+    m_Localized: Placehuolder2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17255147495424
+    m_Localized: Paclehudler3
     m_Metadata:
       m_Items: []
   references:

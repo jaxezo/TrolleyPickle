@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: DeontologyDilemmaDialogue_en-CA
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en-CA
+  m_SharedData: {fileID: 11400000, guid: 9204003c8e525454697b5c53309453d7, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 301158359040
+    m_Localized: Good response, I'm sure Kant would also think using the one on the
+      other track as a means to an end would be because you're quantifying the value
+      of a life.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328362614784
+    m_Localized: 'I wouldn''t think Kant would do that response, think about this:
+      Would he use a person as a means to an end to save others, violating their
+      autonomy?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 349774536704
+    m_Localized: Consider deontology, instead of sacrificing one, consider not using
+      someone as a means to an end to save
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
