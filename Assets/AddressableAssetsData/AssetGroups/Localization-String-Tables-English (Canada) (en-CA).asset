@@ -34,6 +34,7 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en-CA
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c8cee8e586488e648a3530b7978ecb38
     m_Address: DeontologyDilemmaDialogue_en-CA

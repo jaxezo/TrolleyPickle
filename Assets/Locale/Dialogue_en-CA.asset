@@ -33,6 +33,14 @@ MonoBehaviour:
     m_Localized: The Classic
     m_Metadata:
       m_Items: []
+  - m_Id: 4393463775748096
+    m_Localized: The Big Goober
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4393526749028352
+    m_Localized: There's something going on here. What do you do now?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

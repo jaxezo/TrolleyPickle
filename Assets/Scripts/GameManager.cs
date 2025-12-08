@@ -29,21 +29,44 @@ public class GameManager : MonoBehaviour
     const float TIME_PER_WORD = 0.2f;
     const float WORD_BUFFER_TIME = 2f;
     const float SWITCH_FLIP_FIRERATE = 0.35f;
+    const int COUNTDOWN_DURATION = 10;
 
     public static GameManager singleton;
 
+    [Header("Tracks and Player")]
     public Transform playerObject;
+    public TrainRail mainFirstTrack;
+    public TrainRail mainFinalTrack;
+    public TrainRail killTrack;
 
+    [Header("Dilemmas")]
     public Dilemma[] dilemmas;
     public EthicalFrameworks.Frameworks targettedFramework;
+
+    [Header ("UI Dilemma Intro")]
     public TMP_Text txt_DilemmaNumber;
     public TMP_Text txt_DilemmaTitle;
     public Animation anim_UIIntroAnimation;
 
+    [Header ("UI Subtitles")]
     public TMP_Text txt_SubtitleSpeaker;
     public TMP_Text txt_SubtitleText;
     public Animation anim_Subtitle;
     public Animation anim_Switch;
+
+    [Header ("UI End Game")]
+    public GameObject ui_EndGame;
+    public Animation anim_EndGame;
+    public GameObject ui_StatBlockElement;
+    public Transform ui_StatBlockParent;
+    public Animation anim_FrameworkFollowed;
+    public TMP_Text txt_FrameworkFollowedHeader;
+    public TMP_Text txt_FrameworkFollowedCorrect;
+    public TMP_Text txt_FrameworkFollowedIncorrect;
+
+    [Header ("UI Timer")]
+    public RectTransform slider_TimeRemainingProgressBar;
+    public Animation anim_TimeRemainingProgressBar;
 
     private LocalizedString localizedDialogue;
     private LocalizedString localizedGeneral;
@@ -52,6 +75,7 @@ public class GameManager : MonoBehaviour
     private Queue<LocalizedString> dialogueQueue;
     private float nextSwitchFire = 0f;
     private int dilemmaIndex = 0;
+    private float timerProgress = 1f;
     private SwitchDirection direction = SwitchDirection.Right;
     private SwitchDirection decidedDirection;
     private bool switchChangeLocked = false;
@@ -109,7 +133,7 @@ public class GameManager : MonoBehaviour
     {
         if (dilemmaIndex >= dilemmas.Length)
         {
-            EndGame();
+            StartCoroutine (EndGame());
             yield break;
         }
         Dilemma dilemma = dilemmas [dilemmaIndex];
@@ -120,10 +144,70 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds (DILEMMA_HEADER_DURATION);
 
         QueueDialogue (dilemma.description);
+
+        yield return new WaitForSeconds (GetSubtitleDuration (dilemma.description.GetLocalizedString()) / 3);
+
+        StartCoroutine (StartCountdown());
     }
-    private void EndGame ()
+    private IEnumerator EndGame ()
     {
-        
+        ui_EndGame.SetActive (true);
+        anim_EndGame.Play("EndGame");
+
+        yield return new WaitForSeconds (anim_EndGame.GetClip("EndGame").length);
+
+        FrameworkSupport targettedSupport = new FrameworkSupport();
+
+        txt_FrameworkFollowedHeader.text = "While Trying to Follow\n" + targettedFramework.ToString() + "\nYou Got:";
+        txt_FrameworkFollowedCorrect.text = String.Format ("{0} Correct Decisions", targettedSupport.correctResponses.ToString());
+        txt_FrameworkFollowedIncorrect.text = String.Format ("{0} Incorrect Decisions", dilemmas.Length - targettedSupport.correctResponses);
+        anim_FrameworkFollowed.Play ("FrameworkFollowedIn");
+
+        yield return new WaitForSeconds (anim_FrameworkFollowed.GetClip ("FrameworkFollowedIn").length / 1.5f);
+
+        foreach (FrameworkSupport support in frameworkSupports)
+        {
+            if (support.framework == targettedFramework)
+                targettedSupport = support;
+
+            GameObject instance = Instantiate (ui_StatBlockElement, ui_StatBlockParent);
+            Animation anim_instanceAnim = instance.GetComponent<Animation>();
+            TMP_Text txt_instanceFramework = instance.transform.Find ("Text").Find("Framework").GetComponent<TMP_Text>();
+            TMP_Text txt_instanceCount = instance.transform.Find ("Text").Find("Count").GetComponent<TMP_Text>();
+
+            txt_instanceFramework.text = support.framework.ToString();
+            txt_instanceCount.text = support.correctResponses.ToString();
+
+            anim_instanceAnim.Play ("StatBlockIn");
+
+            float instanceAnimClipLength = anim_instanceAnim.GetClip ("StatBlockIn").length;
+            yield return new WaitForSeconds (instanceAnimClipLength / 2);
+        }
+    }
+    private IEnumerator StartCountdown ()
+    {
+        timerProgress = 1f;
+
+        float start = Time.time;
+        float end = start + COUNTDOWN_DURATION;
+
+        anim_TimeRemainingProgressBar.Play ("TimerIn");
+
+        while (timerProgress > 0)
+        {
+            float progress = (Time.time - start) / (end - start);
+            timerProgress = Mathf.Lerp (1, 0, progress);
+            slider_TimeRemainingProgressBar.transform.localScale = new Vector3 (timerProgress, 1, 1);
+            yield return null;
+        }
+
+        anim_TimeRemainingProgressBar.Play ("TimerOut");
+
+        TransferToSplitTrack ();
+    }
+    private void TransferToSplitTrack ()
+    {
+        mainFinalTrack.nextRail = killTrack;
     }
     public void FlipSwitch ()
     {
@@ -170,7 +254,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnKillTrack ()
     {
-        
+        mainFinalTrack.nextRail = mainFirstTrack;
     }
     public void OffKillTrack ()
     {

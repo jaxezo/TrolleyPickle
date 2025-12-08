@@ -2930,6 +2930,11 @@ PrefabInstance:
       objectReference: {fileID: 745220581}
     - target: {fileID: 7644478954590651842, guid: 892c18f417aece942bc0461087c5cc8f,
         type: 3}
+      propertyPath: dilemmas.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644478954590651842, guid: 892c18f417aece942bc0461087c5cc8f,
+        type: 3}
       propertyPath: txt_SubtitleSpeaker
       value: 
       objectReference: {fileID: 804373895}
@@ -2938,6 +2943,12 @@ PrefabInstance:
       propertyPath: anim_UIIntroAnimation
       value: 
       objectReference: {fileID: 521866386}
+    - target: {fileID: 7644478954590651842, guid: 892c18f417aece942bc0461087c5cc8f,
+        type: 3}
+      propertyPath: dilemmas.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b28d17dc62b7d504c9a17c45bb1ab269,
+        type: 2}
     - target: {fileID: 7644478954590651842, guid: 892c18f417aece942bc0461087c5cc8f,
         type: 3}
       propertyPath: terrainPieces.Array.size
@@ -4321,6 +4332,99 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef00ba33f074805408436f1e49696ea8, type: 3}
+--- !u!1 &1308393180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1308393183}
+  - component: {fileID: 1308393182}
+  - component: {fileID: 1308393181}
+  m_Layer: 0
+  m_Name: Terrain_3 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!154 &1308393181
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308393180}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_TerrainData: {fileID: 15600000, guid: fd667856e7027cc4d8eadd13f91db3ff, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &1308393182
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308393180}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: fd667856e7027cc4d8eadd13f91db3ff, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_StaticShadowCaster: 0
+  m_IgnoreQualitySettings: 0
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 2100000, guid: 594ea882c5a793440b60ff72d896021e, type: 2}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ReceiveGI: 1
+  m_ScaleInLightmap: 0.06609891
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+  m_EnableHeightmapRayTracing: 1
+  m_EnableTreesAndDetailsRayTracing: 0
+  m_TreeMotionVectorModeOverride: 3
+--- !u!4 &1308393183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308393180}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -500, y: 0, z: -150}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1354639786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5332613800773414027, guid: 5441ed68580f85b4d828ed5a652e7926,
@@ -6370,6 +6474,7 @@ SceneRoots:
   - {fileID: 1095303443}
   - {fileID: 1728237842}
   - {fileID: 2067636720}
+  - {fileID: 1308393183}
   - {fileID: 171002237}
   - {fileID: 1682553633}
   - {fileID: 1921534302}

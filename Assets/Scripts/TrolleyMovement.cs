@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 
 public class TrolleyMovement : MonoBehaviour
@@ -81,7 +82,14 @@ public class TrolleyMovement : MonoBehaviour
 
         transform.position = newPos;
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(targetTangent), rotationCatchupSpeed * Time.deltaTime);
+        if (Vector3.Distance (transform.rotation.eulerAngles, new Vector3 (targetTangent.x, targetTangent.y, targetTangent.z)) < 75)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(targetTangent), rotationCatchupSpeed * Time.deltaTime);
+        }
+        else
+        {
+            transform.rotation = Quaternion.LookRotation (targetTangent);
+        }
     }
 
     void DetermineNextTrack ()
