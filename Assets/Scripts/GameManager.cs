@@ -12,6 +12,8 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine.Localization.SmartFormat.Core.Parsing;
 using System.Linq;
+using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,6 +32,8 @@ public class GameManager : MonoBehaviour
     const float WORD_BUFFER_TIME = 2f;
     const float SWITCH_FLIP_FIRERATE = 0.35f;
     const int COUNTDOWN_DURATION = 10;
+    const int INTRO_DIALOGUE_COUNT = 12;
+    const int INTRO_HIDE_SPEAKER_UNTIL_THIS_INDEX = 3;
 
     public static GameManager singleton;
 
@@ -38,10 +42,14 @@ public class GameManager : MonoBehaviour
     public TrainRail mainFirstTrack;
     public TrainRail mainFinalTrack;
     public TrainRail killTrack;
+    public TrainRail victimTrack;
 
     [Header("Dilemmas")]
     public Dilemma[] dilemmas;
     public EthicalFrameworks.Frameworks targettedFramework;
+
+    [Header("Intro Cinematic")]
+    public Animation[] introAnimations;
 
     [Header ("UI Dilemma Intro")]
     public TMP_Text txt_DilemmaNumber;
@@ -73,15 +81,19 @@ public class GameManager : MonoBehaviour
     private Dilemma currentDilemma;
     private FrameworkSupport[] frameworkSupports;
     private Queue<LocalizedString> dialogueQueue;
+    private GameObject victimInstance;
     private float nextSwitchFire = 0f;
     private int dilemmaIndex = 0;
     private float timerProgress = 1f;
     private SwitchDirection direction = SwitchDirection.Right;
     private SwitchDirection decidedDirection;
+    private bool runningIntro = false;
     private bool switchChangeLocked = false;
     private bool dialogueActive = false;
+    private static Mutex mutexLock = new Mutex();
 
     public SwitchDirection Direction { get => direction; }
+    public bool RunningIntro { get => runningIntro; }
 
     public enum SwitchDirection
     {
@@ -102,11 +114,14 @@ public class GameManager : MonoBehaviour
 
         InitializeLocalization();
 
-        StartCoroutine (InitiateDilemma(dilemmaIndex));
+        StartCoroutine (RunIntroCinematic());
     }
 
     private void InitializeFrameworkSupportTracker ()
     {
+        int targetFrameworkIndex = PlayerPrefs.GetInt ("TargetFramework", 0);
+        targettedFramework = (EthicalFrameworks.Frameworks)targetFrameworkIndex;
+
         frameworkSupports = new FrameworkSupport[Enum.GetNames (typeof (EthicalFrameworks.Frameworks)).Length];
         int i = 0;
 
@@ -121,14 +136,31 @@ public class GameManager : MonoBehaviour
     private void InitializeLocalization ()
     {
         dialogueQueue = new Queue<LocalizedString>();
-
-        localizedDialogue = new LocalizedString();
-        localizedGeneral = new LocalizedString();
-
-        localizedDialogue.TableReference = "Dialogue";
-        localizedGeneral.TableReference = "General";
     }
 
+    private IEnumerator RunIntroCinematic()
+    {
+        runningIntro = true;
+        foreach (Animation anim in introAnimations)
+        {
+            anim.Play ();
+        }
+
+        yield return new WaitForSeconds (introAnimations[0].clip.length);
+
+        for (int i = 1; i <= INTRO_DIALOGUE_COUNT; i++)
+        {
+            LocalizedString dialogueLocale = new LocalizedString();
+            dialogueLocale = GetLocale (LocaleTables.Dialogue, "DialogueIntro" + i);
+            QueueDialogue (dialogueLocale);
+        }
+
+        runningIntro = false;
+
+        yield return new WaitUntil (() => !dialogueActive);
+
+        StartCoroutine (InitiateDilemma (dilemmaIndex));
+    }
     private IEnumerator InitiateDilemma(int dilemmaIndex)
     {
         if (dilemmaIndex >= dilemmas.Length)
@@ -143,9 +175,9 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds (DILEMMA_HEADER_DURATION);
 
-        QueueDialogue (dilemma.description);
+        QueueDialogues (dilemma.descriptions);
 
-        yield return new WaitForSeconds (GetSubtitleDuration (dilemma.description.GetLocalizedString()) / 3);
+        yield return new WaitForSeconds (GetSubtitleDurationFromArray (dilemma.descriptions) / 3);
 
         StartCoroutine (StartCountdown());
     }
@@ -158,7 +190,16 @@ public class GameManager : MonoBehaviour
 
         FrameworkSupport targettedSupport = new FrameworkSupport();
 
-        txt_FrameworkFollowedHeader.text = "While Trying to Follow\n" + targettedFramework.ToString() + "\nYou Got:";
+        foreach (FrameworkSupport support in frameworkSupports)
+        {
+            if (support.framework == targettedFramework)
+            {
+                targettedSupport = support;
+                break;
+            }
+        }
+
+        txt_FrameworkFollowedHeader.text = "While Trying to Follow\n" + EthicalFrameworks.FrameworkToString (targettedFramework) + "\nYou Got:";
         txt_FrameworkFollowedCorrect.text = String.Format ("{0} Correct Decisions", targettedSupport.correctResponses.ToString());
         txt_FrameworkFollowedIncorrect.text = String.Format ("{0} Incorrect Decisions", dilemmas.Length - targettedSupport.correctResponses);
         anim_FrameworkFollowed.Play ("FrameworkFollowedIn");
@@ -167,15 +208,12 @@ public class GameManager : MonoBehaviour
 
         foreach (FrameworkSupport support in frameworkSupports)
         {
-            if (support.framework == targettedFramework)
-                targettedSupport = support;
-
             GameObject instance = Instantiate (ui_StatBlockElement, ui_StatBlockParent);
             Animation anim_instanceAnim = instance.GetComponent<Animation>();
             TMP_Text txt_instanceFramework = instance.transform.Find ("Text").Find("Framework").GetComponent<TMP_Text>();
             TMP_Text txt_instanceCount = instance.transform.Find ("Text").Find("Count").GetComponent<TMP_Text>();
 
-            txt_instanceFramework.text = support.framework.ToString();
+            txt_instanceFramework.text = EthicalFrameworks.FrameworkToString (support.framework);
             txt_instanceCount.text = support.correctResponses.ToString();
 
             anim_instanceAnim.Play ("StatBlockIn");
@@ -183,6 +221,10 @@ public class GameManager : MonoBehaviour
             float instanceAnimClipLength = anim_instanceAnim.GetClip ("StatBlockIn").length;
             yield return new WaitForSeconds (instanceAnimClipLength / 2);
         }
+
+        yield return new WaitForSeconds (7f);
+
+        SceneManager.LoadScene (0);
     }
     private IEnumerator StartCountdown ()
     {
@@ -211,6 +253,9 @@ public class GameManager : MonoBehaviour
     }
     public void FlipSwitch ()
     {
+        if (runningIntro)
+            return;
+            
         if (switchChangeLocked)
         {
             switch (Direction)
@@ -245,12 +290,29 @@ public class GameManager : MonoBehaviour
     {
         switchChangeLocked = true;
 
+        if (victimInstance != null)
+            Destroy (victimInstance);
+
         return Direction;
     }
     public void OffFinalTrack ()
     {
         decidedDirection = direction;
         switchChangeLocked = false;
+
+        Transform killSpot = victimTrack.killArea;
+        GameObject victims;
+
+        if (decidedDirection == SwitchDirection.Left)
+        {
+            victims = currentDilemma.leftTrackKill;
+        }
+        else
+        {
+            victims = currentDilemma.rightTrackKill;
+        }
+
+        victimInstance = Instantiate (victims, killSpot.transform.position, killSpot.transform.rotation);
     }
     public void OnKillTrack ()
     {
@@ -303,7 +365,7 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator MadeCorrectDecision ()
     {
-        LocalizedString dialogueString = GetLocale (LocaleTables.General, "Error");
+        LocalizedString[] dialogueStrings = new LocalizedString[] { GetLocale (LocaleTables.General, "Error") };
 
         if (decidedDirection == SwitchDirection.Left)
         {
@@ -311,7 +373,7 @@ public class GameManager : MonoBehaviour
             {
                 if (response.framework == targettedFramework)
                 {
-                    dialogueString = response.correctText;
+                    dialogueStrings = response.correctTexts;
                     break;
                 }
             }
@@ -322,13 +384,13 @@ public class GameManager : MonoBehaviour
             {
                 if (response.framework == targettedFramework)
                 {
-                    dialogueString = response.correctText;
+                    dialogueStrings = response.correctTexts;
                     break;
                 }
             }
         }
 
-        QueueDialogue (dialogueString);
+        QueueDialogues (dialogueStrings);
 
         yield return new WaitUntil (() => !dialogueActive);
 
@@ -336,7 +398,7 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator MadeIncorrectDecision ()
     {
-        LocalizedString dialogueString = GetLocale (LocaleTables.General, "Error");
+        LocalizedString[] dialogueStrings = new LocalizedString[] { GetLocale (LocaleTables.General, "Error") };
 
         if (decidedDirection == SwitchDirection.Left)
         {
@@ -344,7 +406,7 @@ public class GameManager : MonoBehaviour
             {
                 if (response.framework == targettedFramework)
                 {
-                    dialogueString = response.incorrectText;
+                    dialogueStrings = response.incorrectTexts;
                     break;
                 }
             }
@@ -355,13 +417,13 @@ public class GameManager : MonoBehaviour
             {
                 if (response.framework == targettedFramework)
                 {
-                    dialogueString = response.incorrectText;
+                    dialogueStrings = response.incorrectTexts;
                     break;
                 }
             }
         }
 
-        QueueDialogue (dialogueString);
+        QueueDialogues (dialogueStrings);
 
         yield return new WaitUntil (() => !dialogueActive);
 
@@ -376,8 +438,10 @@ public class GameManager : MonoBehaviour
 
         while (dialogueQueue.Count > 0)
         {
+            mutexLock.WaitOne ();
             LocalizedString dialogueLocaleString = dialogueQueue.Dequeue ();
             string dialogueString = dialogueLocaleString.GetLocalizedString ();
+            mutexLock.ReleaseMutex();
 
             txt_SubtitleSpeaker.text = GetLocaleString (LocaleTables.Dialogue, "TheConductor");
             txt_SubtitleText.text = dialogueString;
@@ -402,7 +466,23 @@ public class GameManager : MonoBehaviour
     }
     private void QueueDialogue (LocalizedString dialogue)
     {
+        mutexLock.WaitOne();
         dialogueQueue.Enqueue (dialogue);
+        mutexLock.ReleaseMutex();
+
+        if (!dialogueActive)
+        {
+            StartCoroutine (PerformDialogue());
+        }
+    }
+    private void QueueDialogues (LocalizedString[] dialogues)
+    {
+        mutexLock.WaitOne();
+        foreach (LocalizedString dialogue in dialogues)
+        {
+            dialogueQueue.Enqueue (dialogue);
+        }
+        mutexLock.ReleaseMutex();
 
         if (!dialogueActive)
         {
@@ -415,6 +495,12 @@ public class GameManager : MonoBehaviour
     }
     private LocalizedString GetLocale (LocaleTables table, string entry)
     {
+        localizedDialogue = new LocalizedString();
+        localizedGeneral = new LocalizedString();
+
+        localizedDialogue.TableReference = "Dialogue";
+        localizedGeneral.TableReference = "General";
+
         switch (table)
         {
             case LocaleTables.General:
@@ -433,6 +519,22 @@ public class GameManager : MonoBehaviour
         int wordCount = words.Length;
 
         float duration = wordCount * TIME_PER_WORD + WORD_BUFFER_TIME;
+
+        return duration;
+    }
+    private float GetSubtitleDurationFromArray (LocalizedString[] texts)
+    {
+        string masterString = "";
+        int wordCount = 0;
+        foreach (LocalizedString text in texts)
+        {
+            string localeString = text.GetLocalizedString();
+            string[] words = localeString.Split (" ");
+            masterString += words;
+            wordCount += words.Length;
+        }
+
+        float duration = wordCount * TIME_PER_WORD + (WORD_BUFFER_TIME * texts.Length);
 
         return duration;
     }

@@ -21,8 +21,8 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  description:
-    m_TableReference:
+  descriptions:
+  - m_TableReference:
       m_TableCollectionName: GUID:82d504f2990bd7340ac6d8b078b0cb64
     m_TableEntryReference:
       m_KeyId: 1210936451072
@@ -32,8 +32,8 @@ MonoBehaviour:
     m_LocalVariables: []
   rightTrackSupport:
   - framework: 0
-    correctText:
-      m_TableReference:
+    correctTexts:
+    - m_TableReference:
         m_TableCollectionName: GUID:9204003c8e525454697b5c53309453d7
       m_TableEntryReference:
         m_KeyId: 301158359040
@@ -41,8 +41,16 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    incorrectText:
-      m_TableReference:
+    - m_TableReference:
+        m_TableCollectionName: GUID:9204003c8e525454697b5c53309453d7
+      m_TableEntryReference:
+        m_KeyId: 349774536704
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    incorrectTexts:
+    - m_TableReference:
         m_TableCollectionName: GUID:9204003c8e525454697b5c53309453d7
       m_TableEntryReference:
         m_KeyId: 328362614784
@@ -60,8 +68,8 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
   - framework: 2
-    correctText:
-      m_TableReference:
+    correctTexts:
+    - m_TableReference:
         m_TableCollectionName: GUID:cc04fddbc555d0342a956203a0a8b29a
       m_TableEntryReference:
         m_KeyId: 17192828526592
@@ -69,8 +77,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    incorrectText:
-      m_TableReference:
+    incorrectTexts:
+    - m_TableReference:
         m_TableCollectionName: GUID:cc04fddbc555d0342a956203a0a8b29a
       m_TableEntryReference:
         m_KeyId: 17235602038784
@@ -89,8 +97,8 @@ MonoBehaviour:
       m_LocalVariables: []
   leftTrackSupport:
   - framework: 1
-    correctText:
-      m_TableReference:
+    correctTexts:
+    - m_TableReference:
         m_TableCollectionName: GUID:ab9e046ef04e4b44eb87ee05c143dbc9
       m_TableEntryReference:
         m_KeyId: 1233761853440
@@ -98,8 +106,8 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
-    incorrectText:
-      m_TableReference:
+    incorrectTexts:
+    - m_TableReference:
         m_TableCollectionName: GUID:ab9e046ef04e4b44eb87ee05c143dbc9
       m_TableEntryReference:
         m_KeyId: 3257358344192
@@ -116,6 +124,10 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+  rightTrackKill: {fileID: 2970003341295262758, guid: b7ed87a8c8a4fc64cab2f48d1131b891,
+    type: 3}
+  leftTrackKill: {fileID: 4138521352756647746, guid: 6193ec28e9326ad4a8b1680d1ccbdac7,
+    type: 3}
   references:
     version: 2
     RefIds: []

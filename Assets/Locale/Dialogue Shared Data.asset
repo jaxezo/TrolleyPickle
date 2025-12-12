@@ -19,12 +19,64 @@ MonoBehaviour:
     m_Key: TheConductor
     m_Metadata:
       m_Items: []
-  - m_Id: 1210936451072
-    m_Key: Dilemma1_Explanation
+  - m_Id: 5320577253367808
+    m_Key: DialogueIntro1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5320718119067648
+    m_Key: DialogueIntro2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5321106406760448
+    m_Key: DialogueIntro3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5321423580028928
+    m_Key: DialogueIntro4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5321609593217024
+    m_Key: DialogueIntro5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5321819451023360
+    m_Key: DialogueIntro6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5323580840599552
+    m_Key: DialogueIntro7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5323626260717568
+    m_Key: DialogueIntro8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5323641536372736
+    m_Key: DialogueIntro9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5323656103190528
+    m_Key: DialogueIntro10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5323671429177344
+    m_Key: DialogueIntro11
     m_Metadata:
       m_Items: []
   - m_Id: 9978088775680
     m_Key: Dilemma1_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1210936451072
+    m_Key: Dilemma1_Explanation_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6062245501984768
+    m_Key: Dilemma1_Explanation_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6062541053616128
+    m_Key: Dilemma1_Explanation_3
     m_Metadata:
       m_Items: []
   - m_Id: 4393463775748096
@@ -32,7 +84,183 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4393526749028352
-    m_Key: Dilemma2_Explanation
+    m_Key: Dilemma2_Explanation_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6062896265027584
+    m_Key: Dilemma3_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063005476315136
+    m_Key: Dilemma3_Explanation_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063143078846464
+    m_Key: Dilemma3_Explanation_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063215015354368
+    m_Key: Dilemma3_Explanation_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063399606673408
+    m_Key: Dilemma4_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063479009042432
+    m_Key: Dilemma4_Explanation_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063828126130176
+    m_Key: Dilemma4_Explanation_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063855015813120
+    m_Key: Dilemma4_Explanation_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064068229062656
+    m_Key: Dilemma5_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064099094945792
+    m_Key: Dilemma5_Explanation_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064151108509696
+    m_Key: Dilemma5_Explanation_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064160348561408
+    m_Key: Dilemma6_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064362820198400
+    m_Key: Dilemma6_Explanation_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064565107286016
+    m_Key: Dilemma6_Explanation_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064592311541760
+    m_Key: Dilemma6_Explanation_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064603053154304
+    m_Key: Dilemma6_Explanation_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064732187385856
+    m_Key: Dilemma7_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064796817416192
+    m_Key: Dilemma7_Explanation_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064841574834176
+    m_Key: Dilemma7_Explanation_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064854338101248
+    m_Key: Dilemma7_Explanation_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064860281430016
+    m_Key: Dilemma7_Explanation_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064935246225408
+    m_Key: Dilemma8_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065009032421376
+    m_Key: Dilemma8_Explanation_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065110274531328
+    m_Key: Dilemma8_Explanation_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065741143990272
+    m_Key: Dilemma8_Explanation_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065751709442048
+    m_Key: Dilemma8_Explanation_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065912955265024
+    m_Key: Dilemma8_Explanation_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065986963759104
+    m_Key: Dilemma9_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066057822330880
+    m_Key: Dilemma9_Explanation_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066112465723392
+    m_Key: Dilemma9_Explanation_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066133223333888
+    m_Key: Dilemma9_Explanation_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066257060159488
+    m_Key: Dilemma9_Explanation_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066638615994368
+    m_Key: Dilemma9_Explanation_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066740919263232
+    m_Key: Dilemma9_Explanation_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066792848941056
+    m_Key: Dilemma10_Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066845030277120
+    m_Key: Dilemma10_Explanation_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066911736487936
+    m_Key: Dilemma10_Explanation_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066920657772544
+    m_Key: Dilemma10_Explanation_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066926424940544
+    m_Key: Dilemma10_Explanation_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066931739123712
+    m_Key: Dilemma10_Explanation_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066938064134144
+    m_Key: Dilemma10_Explanation_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066945777459200
+    m_Key: Dilemma10_Explanation_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6067228360302592
+    m_Key: Dilemma10_Explanation_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6067282458435584
+    m_Key: Dilemma10_Explanation_9
     m_Metadata:
       m_Items: []
   m_Metadata:

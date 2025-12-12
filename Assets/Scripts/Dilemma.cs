@@ -7,16 +7,18 @@ using static EthicalFrameworks;
 public class Dilemma : ScriptableObject
 {
     public LocalizedString title;
-    public LocalizedString description;
+    public LocalizedString[] descriptions;
     public FrameworkResponse[] rightTrackSupport;
     public FrameworkResponse[] leftTrackSupport;
+    public GameObject rightTrackKill;
+    public GameObject leftTrackKill;
 }
 
 [System.Serializable]
 public class FrameworkResponse
 {
     public EthicalFrameworks.Frameworks framework;
-    public LocalizedString correctText;
-    public LocalizedString incorrectText;
+    public LocalizedString[] correctTexts;
+    public LocalizedString[] incorrectTexts;
     public LocalizedString alternateText;
 }

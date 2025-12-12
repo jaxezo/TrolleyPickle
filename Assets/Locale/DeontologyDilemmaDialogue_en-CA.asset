@@ -19,20 +19,244 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 301158359040
-    m_Localized: Good response, I'm sure Kant would also think using the one on the
-      other track as a means to an end would be because you're quantifying the value
-      of a life.
+    m_Localized: "I see you\u2019ve considered that if you switched the track, you
+      would be actively killing the one, which would\u2019ve been using them as a
+      means to an end. Deontology prohibits killing an innocent; therefore, you\u2019ve
+      made a correct decision. Good job."
     m_Metadata:
       m_Items: []
   - m_Id: 328362614784
-    m_Localized: 'I wouldn''t think Kant would do that response, think about this:
-      Would he use a person as a means to an end to save others, violating their
-      autonomy?'
+    m_Localized: Maybe I was wrong about your good morales.
     m_Metadata:
       m_Items: []
-  - m_Id: 349774536704
-    m_Localized: Consider deontology, instead of sacrificing one, consider not using
-      someone as a means to an end to save
+  - m_Id: 1731813696331776
+    m_Localized: 'By switching the track, you killed an innocent, using them as a
+      means to an end. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1731844520271872
+    m_Localized: "Remember: With deontology, universalize your actions. Focus on
+      your duties. The consequences don\u2019t matter, only the intent. It is your
+      duty to not intentionally kill innocents."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1732036757807104
+    m_Localized: The reasoning for this one is practically identical to the last.
+      The numbers do not affect the maxim, you still have the duty to not intentionally
+      kill.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1732433736097792
+    m_Localized: This is quite problematic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1732466493612032
+    m_Localized: I thought after the last one you would understand.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1732481257562112
+    m_Localized: Deontology. Maxim to not kill innocents. That is your duty. Numbers
+      do not affect the maxim, as it is universal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1732632562884608
+    m_Localized: Once again, deontology maxims prohibit intentionally killing innocents,
+      therefore you made the correct decision to not pull the lever.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1732662166282240
+    m_Localized: Incorrect, deontology maxims prohibit to intentionally kill innocents.
+      Even though there is a baby on the main track, deontology does not care about
+      the age or numbers. Maxims are universal and apply always.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1732887173914624
+    m_Localized: To some that may have been a difficult choice, but you do not fear
+      consequences, only actions. It is still wrong to intentionally harm people,
+      let alone a baby.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1732944354861056
+    m_Localized: 'Although the world may be better off without the threat of baby
+      Hitler, you still have to consider:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1732988369887232
+    m_Localized: "You\u2019re actively killing an innocent baby."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733001602916352
+    m_Localized: "It doesn\u2019t matter who the baby is, it is always wrong to kill
+      an innocent."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733228166635520
+    m_Localized: That must have been a tough decision, but if it makes you feel any
+      better, you are a very moral and ethical person by a deontological standpoint.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733337235316736
+    m_Localized: "You didn\u2019t intentionally kill to save your friend. You followed
+      your duty. Congratulations!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733540239630336
+    m_Localized: You saved your friend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733592290942976
+    m_Localized: As we all know, what you did is completely unethical.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733600939597824
+    m_Localized: You killed innocent five people to save your friend. Deontology
+      prohibits intentionally killing innocents.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733608401264640
+    m_Localized: "I\u2019ll be seeing you in my office after this."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733798810083328
+    m_Localized: "I don\u2019t have an office. Instead, we will put you through another
+      dilemma as a punishment."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1733897606914048
+    m_Localized: "Yeah, I figured as much. It is your duty to avoid a completely
+      preventable death, if preventing it doesn\u2019t compromise another duty."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734250444349440
+    m_Localized: 'Haha! That was all a trick! You thought with deontology all you
+      had to do was never switch the track and you would never intentionally cause
+      any harm! '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734330178068480
+    m_Localized: "This time, while it is true that you didn\u2019t intentionally
+      cause any harm, I think you had ulterior motives."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734363434704896
+    m_Localized: 'I believe your intent was not pure. You wanted your worst enemy
+      to get killed. But think about this:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734627302563840
+    m_Localized: You have a moral duty to avoid a completely preventable death, especially
+      if doing so is not compromising any other maxim.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734728938938368
+    m_Localized: 'You thought I was done with you already? '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734769866956800
+    m_Localized: "Wrong, we\u2019re not done. You\u2019ve still got dilemmas to go
+      through!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734781627785216
+    m_Localized: "I congratulate you though, you followed your duties and didn\u2019t
+      sacrifice innocents."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734854411542528
+    m_Localized: "I hope you\u2019re ready for the next one!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734901140283392
+    m_Localized: Your self-preservation instincts kicked in, giving you a lapse in
+      moral judgement, eh?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734942693253120
+    m_Localized: Your duty is to not kill innocents.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1734968119123968
+    m_Localized: "That\u2019s fine though, that means I get to keep you around longer.
+      I hope you\u2019re ready for the next dilemma!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735032099037184
+    m_Localized: As we declared previously, it is your moral duty to avoid harm when
+      it is completely avoidable. In this case, you saved the children from harm
+      and destroyed some useless papers and stuff.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735116517793792
+    m_Localized: "I mean, between you and I, we know it\u2019s not useless. I\u2019m
+      just saying, it doesn\u2019t have the same moral weight humans have now, does
+      it?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735341873553408
+    m_Localized: "You sacrificed five children to save the cure to many cancers.
+      However, if there\u2019s one thing that\u2019s worse than cancers, it\u2019s
+      not following your morals."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735492306460672
+    m_Localized: With deontology, we made it clear on previous dilemmas that you
+      have a moral obligation to avoid harm to people when harm is completely avoidable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735735982940160
+    m_Localized: In this case, you allowed harm to five children, violating your
+      duty.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735756484698112
+    m_Localized: Remember, deontology is non-consequentialist, you should not be
+      thinking about the consequences, only following your universal moral duties.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735824851853312
+    m_Localized: The money does not fundamentally change the fact that you have a
+      moral duty to not use people as a means to an end; to not intentionally harm
+      innocents.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1735956922097664
+    m_Localized: So, by diverting the trolley to the other track, you are using those
+      ten people as a means to an end to save a billionaire making a promise to donate
+      money to fight world hunger.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1736192088334336
+    m_Localized: Deontology does not let you do this. You have a duty to avoid intentionally
+      harming innocents and to avoid using people as a means instead of an end.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1736343687258112
+    m_Localized: You decided to save the child.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1736422661808128
+    m_Localized: "You can\u2019t allow the child to be used as a means to an end."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1736442408591360
+    m_Localized: The child is saved, but paradise has fallen.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1736488134893568
+    m_Localized: You decided to not save the child.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1736515557253120
+    m_Localized: You broke your moral obligations; your duty to prevent an innocent
+      child to be used as a means to an end.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1736612525367296
+    m_Localized: The child is not saved, but paradise persists.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1736659866476544
+    m_Localized: But you are now burdened by knowledge.
     m_Metadata:
       m_Items: []
   references:

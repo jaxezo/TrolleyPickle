@@ -19,20 +19,242 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1233761853440
-    m_Localized: "That's true, the utilitarian would definitely try to increase happiness
-      across the greatest number of people. In this case, more living equals more
-      happy.\t"
+    m_Localized: You must be fast at the hedonic calculus. I congratulate you in
+      swiftly taking into account the intensities of pains, analyzing their durations,
+      seeing its certainties and propinquities, considering the fecundities from
+      the consequences, and their purities.
     m_Metadata:
       m_Items: []
   - m_Id: 3257358344192
-    m_Localized: That wouldn't be correct for a utilitarian. You should consider
-      increasing happiness across the GREATEST number of people.
+    m_Localized: "I must have made a terrible mistake with choosing you if you\u2019re
+      making decisions like this. Utilitarianism it supposed to be really easy."
     m_Metadata:
       m_Items: []
   - m_Id: 3283161702400
-    m_Localized: That's not correct, maybe you should consider a framework such as
-      utilitarianism, increasing the amount of happiness across the greatest number
-      of people.
+    m_Localized: 'Allow me to give you a hint: Bigger number of happy better.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1737361581924352
+    m_Localized: "Clearly, you\u2019ve come to the same conclusion that I have: In
+      this scenario, the only important part of the calculus would be the extent:
+      five is greater than one, therefore save the five by sacrificing the one."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1737633809031168
+    m_Localized: Much like last time, you are making a net positive here. Five is
+      greater than four.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1737673973686272
+    m_Localized: 'I thought you would understand after the previous dilemma. Let
+      me give you a more direct hint this time:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1737715627319296
+    m_Localized: Five is greater than four, therefore save the five.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1737854702051328
+    m_Localized: While this is tougher than the classic, it is likely that Utilitarianism
+      would let the baby die to save five adults. It can be interpreted that the
+      baby has more future life years ahead of it, however the calculus is still
+      skewed towards the five.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1737955738640384
+    m_Localized: "I see you think that the baby has more potential years ahead of
+      it, making it a good candidate for saving. However, it\u2019s unlikely those
+      potential years outweigh the certain productive years of five adults."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1738142867513344
+    m_Localized: "Not only did you save ten adults immediately, but you\u2019ve also
+      saved millions from a genocide when he grows up."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1738327140065280
+    m_Localized: "You\u2019ve managed to both kill a greater number of people in
+      the short-term AND allow Hitler to grow up and cause a genocide. I hope you
+      feel good about your morals, cause I don\u2019t."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1738698495352832
+    m_Localized: "You left your friend to die, but they were probably also a utilitarian
+      and understood your position. They would\u2019ve done the same thing for you
+      if you were tied to the tracks, and you can take solace in that."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1738814140702720
+    m_Localized: You sacrificed a greater number of people to save one person.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1738846688501760
+    m_Localized: "I\u2019m not the one disappointed in you. It\u2019s your friend
+      who is disappointed."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1738867240591360
+    m_Localized: "Your friend is clearly a strict utilitarian. I heard they don\u2019t
+      want to be friends with you anymore now that they\u2019ve seen you aren\u2019t
+      a moral person after all."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1738879248883712
+    m_Localized: Maybe we can redeem you in the next dilemma.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739138641420288
+    m_Localized: Yeah, saving one is definitely greater than killing one. This one
+      was an easy round.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739192622112768
+    m_Localized: 'Stop it, you know better than this. Do I need to put this in simple
+      terms? '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739243759067136
+    m_Localized: Bigger number better. Saving one person is better than saving zero
+      people.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739251304620032
+    m_Localized: You are not moral for killing your enemy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739375724453888
+    m_Localized: "We\u2019re not done here."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739430871162880
+    m_Localized: You did it! You made the correct decision. You sacrificed yourself
+      to save a greater number of individuals with many years ahead of them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739619241549824
+    m_Localized: "But you\u2019re sticking with me to do a few more dilemmas."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739674266624000
+    m_Localized: You saved yourself at the cost of five children.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739709796573184
+    m_Localized: Five children. With many years ahead of them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739766935576576
+    m_Localized: "At least you\u2019re still here with me to continue solving these
+      dilemmas, but I\u2019d suggest you follow the Utilitarianism more closely from
+      here on out. What brings the most happiness among the greatest number of people?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1739777069015040
+    m_Localized: Keep that in mind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1740927692431360
+    m_Localized: The cure to cancers is saved.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741009451999232
+    m_Localized: 'Millions of people will be happy by this outcome. While it might
+      not be immediate, it is certain that because of your actions, terminal cancers
+      will be treated in the future. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741179421974528
+    m_Localized: "It cost five children. This makes me wonder\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741222677831680
+    m_Localized: How many children would you sacrifice for this?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741266030157824
+    m_Localized: What number will make the hedonic calculus favor the children?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741306945593344
+    m_Localized: We can save this for another time.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741355360444416
+    m_Localized: You saved five children causing immediate happiness, but stripped
+      millions of happiness in the future.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741434683121664
+    m_Localized: Following Utilitarianism, you should be able to see that the millions
+      of people in the future cured from terminal cancer outweigh the five children.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741528157380608
+    m_Localized: Millions of people around the world are going to be happy with this
+      massive donation to help combat world hunger. Millions is a big number. In
+      this case, millions is greater than ten.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741676748988416
+    m_Localized: "Not to mention, you\u2019re also going to receive a large tip,
+      making you happy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741769489244160
+    m_Localized: "That\u2019s assuming the billionaire follows through with his promise.
+      This affects the calculus some, because the happiness is uncertain, but if
+      it is true, it\u2019s a lot of happy people."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741869515005952
+    m_Localized: "Maybe you thought the billionaire couldn\u2019t be trusted, and
+      I get that. Certainty is definitely part of the hedonic calculus, but let\u2019s
+      weigh the options. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1741914700242944
+    m_Localized: "Certain unhappiness to ten people versus uncertain but probable
+      happiness to millions\u2014if not hundreds of millions of people around the
+      world."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742111291465728
+    m_Localized: And a tip for yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742123148763136
+    m_Localized: "I would say it would\u2019ve been worth saving the billionaire
+      to fight world hunger. That would\u2019ve been a lot of happy people."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742213515042816
+    m_Localized: You decided to return to your paradise.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742278807773184
+    m_Localized: The suffering of one single child is outweighed by the happiness
+      of thousands.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742290681847808
+    m_Localized: The child remains tortured, but paradise provides happiness.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742343035150336
+    m_Localized: You decided to save the child.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742381798907904
+    m_Localized: You broke your moral obligations to utility.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742393693954048
+    m_Localized: Unhappiness generated by one child is outweighed by the happiness
+      of thousands.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1742406977314816
+    m_Localized: The child is saved, but paradise for thousands is destroyed.
     m_Metadata:
       m_Items: []
   references:

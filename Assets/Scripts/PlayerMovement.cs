@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     public void OnLook (InputAction.CallbackContext context)
     {
+        if (GameManager.singleton.RunningIntro)
+            return;
+            
         Vector2 mouseDelta = context.ReadValue<Vector2>();
 
         // Rotate camera based on mouse movement
@@ -40,5 +44,9 @@ public class PlayerMovement : MonoBehaviour
     public void OnFire (InputAction.CallbackContext context)
     {
         GameManager.singleton.FlipSwitch ();
+    }
+    public void OnEscape (InputAction.CallbackContext context)
+    {
+        Application.Quit();
     }
 }

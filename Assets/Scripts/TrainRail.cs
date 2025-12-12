@@ -14,7 +14,7 @@ public class TrainRail : MonoBehaviour
 
     [SerializeField]
     private bool isKillTrack = false;
-
+    public Transform killArea;
     private bool hasAlternatePath;
 
     public bool HasAlternatePath { get => hasAlternatePath; }

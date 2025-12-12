@@ -116,6 +116,10 @@ MonoBehaviour:
       m_FallbackState: 0
       m_WaitForCompletion: 0
       m_LocalVariables: []
+  rightTrackKill: {fileID: 2970003341295262758, guid: b7ed87a8c8a4fc64cab2f48d1131b891,
+    type: 3}
+  leftTrackKill: {fileID: 4138521352756647746, guid: 6193ec28e9326ad4a8b1680d1ccbdac7,
+    type: 3}
   references:
     version: 2
     RefIds: []

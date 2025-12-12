@@ -23,10 +23,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1210936451072
-    m_Localized: You are flying down the track at around a million km/h, which roughly
-      equates to 50 mph. Further down the track there are five innocent people tied
-      to the track. However, there is another track you can switch to that only has
-      one person tied to it. What will you do?
+    m_Localized: "There are five people tied on the tracks ahead of you. You don\u2019t
+      know them; they are strangers to you. "
     m_Metadata:
       m_Items: []
   - m_Id: 9978088775680
@@ -34,11 +32,291 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4393463775748096
-    m_Localized: The Big Goober
+    m_Localized: Evening the Odds
     m_Metadata:
       m_Items: []
   - m_Id: 4393526749028352
-    m_Localized: There's something going on here. What do you do now?
+    m_Localized: "Let\u2019s do a similar scenario to the last one, but this time
+      there are four on the alternate left track instead of only one. What will you
+      do?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5320577253367808
+    m_Localized: Rise and shine.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5320718119067648
+    m_Localized: "You\u2019re probably confused about what's going on. Allow me to
+      enlighten you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5321106406760448
+    m_Localized: You can call me The Conductor. I kidnapped you and put you on a
+      high-speed trolley.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5321423580028928
+    m_Localized: "Don\u2019t bother looking for the brakes or changing the speed,
+      it\u2019s all disabled."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5321609593217024
+    m_Localized: I've been watching your day-to-day life for some time; you have
+      a good moral compass.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5321819451023360
+    m_Localized: Now it's time to put that to the test.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5323580840599552
+    m_Localized: "You\u2019ve been deprived of control."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5323626260717568
+    m_Localized: 'Now you can only make one decision: stay on the current track,
+      or divert to the alternate track.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5323641536372736
+    m_Localized: Sounds easy, right?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5323656103190528
+    m_Localized: Unfortunately for you, there are people tied to the tracks ahead
+      of you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5323671429177344
+    m_Localized: Now you decide who lives, and who dies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6062245501984768
+    m_Localized: 'You can save their lives if you divert to the left track, which
+      only has one person tied to it. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6062541053616128
+    m_Localized: Will you sacrifice one to save five?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6062896265027584
+    m_Localized: The Baby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063005476315136
+    m_Localized: "Let\u2019s mix things up now. On the track in front of you is only
+      one person, and on the other track is five people. Seems easy, right?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063143078846464
+    m_Localized: Wrong!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063215015354368
+    m_Localized: On your tracks is a baby! This will surely throw a wrench into your
+      calculations. Who are you going to save?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063399606673408
+    m_Localized: THE Baby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063479009042432
+    m_Localized: "Let\u2019s change things up a bit. In front of you there are 10
+      adults tied to it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063828126130176
+    m_Localized: You can switch to the alternate track, which has baby Hitler on
+      it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6063855015813120
+    m_Localized: "How much will this affect your decision making? On the one hand
+      it\u2019s a baby, but on the other hand, this baby may or may not grow up to
+      be the Hitler we know. Will you take the chance to prevent a genocide, or will
+      other moral theories shine through?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064068229062656
+    m_Localized: Friendship is Magic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064099094945792
+    m_Localized: "In front of you on the tracks is\u2026 wait, that can\u2019t be
+      right\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064151108509696
+    m_Localized: "It is! It\u2019s your best friend! Your best friend is on the tracks,
+      and to save them, you must switch to the alternate track and sacrifice five
+      people!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064160348561408
+    m_Localized: The Ultimate Dilemma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064362820198400
+    m_Localized: "There is one person tied to the tracks in front of you. Once again,
+      you don\u2019t know this person. However, on the left tracks there is\u2026
+      wait hold on\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064565107286016
+    m_Localized: I must have made a mistake, why is no one on the left track?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064592311541760
+    m_Localized: "Well, it\u2019s too late to change it now, but this isn\u2019t
+      even a dilemma."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064603053154304
+    m_Localized: 'Wait, I know how to make it a dilemma: The person on the tracks
+      in front of you is your worst enemy. The person you personally hate the most,
+      and they personally hate you. Will you kill them or spare their life?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064732187385856
+    m_Localized: I Think, Therefore I Am
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064796817416192
+    m_Localized: You ready for a headache?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064841574834176
+    m_Localized: "On the tracks in front of you is yourself. If you don\u2019t do
+      anything, you will die."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064854338101248
+    m_Localized: You can save yourself if you switch to the alternate track, which
+      has five children on it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064860281430016
+    m_Localized: Will you save yourself by sacrificing five children? Or will you
+      let yourself die?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6064935246225408
+    m_Localized: The Cure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065009032421376
+    m_Localized: On the tracks in front of you is five children.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065110274531328
+    m_Localized: 'You can save these children by diverting to the left track, which
+      has a filing cabinet filled with vital research that contains the cure to many
+      fatal cancers. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065741143990272
+    m_Localized: This data is not redundant or backed up anywhere. Destroying this
+      will set back decades of research and cost many lives that could have been
+      saved.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065751709442048
+    m_Localized: Will you save the cancer research, saving millions of people in
+      the future? Or will you save the children, who have years of life ahead of
+      them. Who knows, maybe one of them will develop the next cure?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065912955265024
+    m_Localized: "That\u2019s unlikely though, one of those children would have to
+      be a genius, and there\u2019s no way of telling right now. They\u2019re just
+      children."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6065986963759104
+    m_Localized: To Fight World Hunger
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066057822330880
+    m_Localized: This one is going to be interesting.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066112465723392
+    m_Localized: Ahead of you on the tracks is a billionaire. He has a lot of money
+      and owns many companies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066133223333888
+    m_Localized: He is very confused but aware of the situation he is in and is willing
+      to make a deal with you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066257060159488
+    m_Localized: 'His proposition: If you redirect the trolley onto the left track,
+      he will donate hundreds of millions of dollars to global humanitarian efforts,
+      fighting world hunger. You would also get a commission.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066638615994368
+    m_Localized: "On the alternate track are ten strangers. You don\u2019t have any
+      connections with them, and they don\u2019t have anything to offer up or match
+      the billionaire\u2019s generous donations."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066740919263232
+    m_Localized: What will you do, will you fight world hunger, or stick to other
+      moral principles?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066792848941056
+    m_Localized: Omelas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066845030277120
+    m_Localized: "I\u2019ve enjoyed our time together, but I think it\u2019s time
+      to say our farewells. However, before we part, I have one final dilemma for
+      you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066911736487936
+    m_Localized: 'You can choose to continue down this track, which will lead you
+      back to your ordinary life in paradise. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066920657772544
+    m_Localized: A paradise you have taken for granted.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066926424940544
+    m_Localized: "But you will not return without carrying the burden of the knowledge
+      I\u2019m about to share."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066931739123712
+    m_Localized: Your home city, Omelas, is not a utopia by accident. It thrives
+      because there is a helpless child imprisoned beneath it, enduring constant
+      torture. This suffering is what sustains the city, allowing it to be a paradise
+      for all its inhabitants.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066938064134144
+    m_Localized: If you decide to divert your trolley to the left track, it will
+      take you directly to the dungeon below the city.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6066945777459200
+    m_Localized: You can save the child.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6067228360302592
+    m_Localized: "However, doing so will lead to the certain collapse of the city\u2014the
+      collapse of that utopia."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6067282458435584
+    m_Localized: Will you return to your life in paradise, or will you save a helpless
+      child and bring about its downfall?
     m_Metadata:
       m_Items: []
   references:
