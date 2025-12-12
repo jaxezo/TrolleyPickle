@@ -3,17 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Localization;
-using UnityEngine.Localization.Components;
 using System;
-using Unity.VisualScripting;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
-using UnityEngine.Localization.SmartFormat.Core.Parsing;
-using System.Linq;
 using System.Threading;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,13 +25,13 @@ public class GameManager : MonoBehaviour
     const float WORD_BUFFER_TIME = 2f;
     const float SWITCH_FLIP_FIRERATE = 0.35f;
     const int COUNTDOWN_DURATION = 10;
-    const int INTRO_DIALOGUE_COUNT = 12;
-    const int INTRO_HIDE_SPEAKER_UNTIL_THIS_INDEX = 3;
+    const int INTRO_DIALOGUE_COUNT = 11;
 
     public static GameManager singleton;
 
     [Header("Tracks and Player")]
     public Transform playerObject;
+    public Transform playerTram;
     public TrainRail mainFirstTrack;
     public TrainRail mainFinalTrack;
     public TrainRail killTrack;
@@ -59,12 +52,15 @@ public class GameManager : MonoBehaviour
     [Header ("UI Subtitles")]
     public TMP_Text txt_SubtitleSpeaker;
     public TMP_Text txt_SubtitleText;
+    public TMP_Text txt_SubtitleTextNoSpeaker;
     public Animation anim_Subtitle;
     public Animation anim_Switch;
+    public Animation anim_SubtitleNoSpeaker;
 
     [Header ("UI End Game")]
     public GameObject ui_EndGame;
     public Animation anim_EndGame;
+    public Animation anim_StatHeader;
     public GameObject ui_StatBlockElement;
     public Transform ui_StatBlockParent;
     public Animation anim_FrameworkFollowed;
@@ -76,6 +72,11 @@ public class GameManager : MonoBehaviour
     public RectTransform slider_TimeRemainingProgressBar;
     public Animation anim_TimeRemainingProgressBar;
 
+    [Header ("Audio")]
+    public AudioClip audio_DilemmaIntro;
+    public AudioClip audio_CountdownAudio;
+    public AudioClip audio_Outro;
+
     private LocalizedString localizedDialogue;
     private LocalizedString localizedGeneral;
     private Dilemma currentDilemma;
@@ -83,6 +84,7 @@ public class GameManager : MonoBehaviour
     private Queue<LocalizedString> dialogueQueue;
     private GameObject victimInstance;
     private float nextSwitchFire = 0f;
+    [SerializeField]
     private int dilemmaIndex = 0;
     private float timerProgress = 1f;
     private SwitchDirection direction = SwitchDirection.Right;
@@ -148,23 +150,29 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds (introAnimations[0].clip.length);
 
-        for (int i = 1; i <= INTRO_DIALOGUE_COUNT; i++)
+        if (PlayerPrefs.GetInt ("FirstDialoguePlayed", 0) == 0)
         {
-            LocalizedString dialogueLocale = new LocalizedString();
-            dialogueLocale = GetLocale (LocaleTables.Dialogue, "DialogueIntro" + i);
-            QueueDialogue (dialogueLocale);
+            for (int i = 1; i <= INTRO_DIALOGUE_COUNT; i++)
+            {
+                LocalizedString dialogueLocale = new LocalizedString();
+                dialogueLocale = GetLocale (LocaleTables.Dialogue, "DialogueIntro" + i);
+                QueueDialogue (dialogueLocale);
+            }
+
+            PlayerPrefs.SetInt ("FirstDialoguePlayed", 1);
         }
 
         runningIntro = false;
 
         yield return new WaitUntil (() => !dialogueActive);
 
-        StartCoroutine (InitiateDilemma (dilemmaIndex));
+        StartCoroutine (InitiateDilemma ());
     }
-    private IEnumerator InitiateDilemma(int dilemmaIndex)
+    private IEnumerator InitiateDilemma()
     {
         if (dilemmaIndex >= dilemmas.Length)
         {
+            UnityEngine.Debug.Log ("End Game");
             StartCoroutine (EndGame());
             yield break;
         }
@@ -177,12 +185,23 @@ public class GameManager : MonoBehaviour
 
         QueueDialogues (dilemma.descriptions);
 
-        yield return new WaitForSeconds (GetSubtitleDurationFromArray (dilemma.descriptions) / 3);
+        float subtitleDuration = GetSubtitleDurationFromArray (dilemma.descriptions);
+
+        yield return new WaitForSeconds (subtitleDuration - 13f);
+
+        GetComponent<AudioSource>().clip = audio_CountdownAudio;
+        GetComponent<AudioSource>().Play();
+
+        yield return new WaitForSeconds (13);
 
         StartCoroutine (StartCountdown());
     }
     private IEnumerator EndGame ()
     {
+        StartCoroutine (DetachPlayerAndEndingCutscene());
+
+        yield return new WaitUntil (() => !dialogueActive);
+
         ui_EndGame.SetActive (true);
         anim_EndGame.Play("EndGame");
 
@@ -206,6 +225,10 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds (anim_FrameworkFollowed.GetClip ("FrameworkFollowedIn").length / 1.5f);
 
+        anim_StatHeader.Play ("StatHeaderIn");
+
+        yield return new WaitForSeconds (anim_StatHeader.GetClip ("StatHeaderIn").length * 2f);
+
         foreach (FrameworkSupport support in frameworkSupports)
         {
             GameObject instance = Instantiate (ui_StatBlockElement, ui_StatBlockParent);
@@ -222,9 +245,30 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds (instanceAnimClipLength / 2);
         }
 
-        yield return new WaitForSeconds (7f);
+        yield return new WaitForSeconds (5f);
+
+        float t = 0;
+        while (t < 1)
+        {
+            t += Time.deltaTime / 2;
+            GetComponent<AudioSource>().volume = Mathf.Lerp (1, 0, t);
+        }
 
         SceneManager.LoadScene (0);
+    }
+    private IEnumerator DetachPlayerAndEndingCutscene ()
+    {
+        UnityEngine.Debug.Log ("Detaching player");
+        playerObject.SetParent (null);
+        playerObject.Find ("Camera").rotation = Quaternion.identity;
+        playerObject.GetComponent<PlayerInput>().enabled = false;
+        anim_EndGame.Play ("FadeHalf");
+        
+        while (true)
+        {
+            yield return null;
+            playerObject.transform.position += (Vector3.forward * -2f + Vector3.up * 0.5f) * Time.deltaTime;
+        }
     }
     private IEnumerator StartCountdown ()
     {
@@ -311,8 +355,8 @@ public class GameManager : MonoBehaviour
         {
             victims = currentDilemma.rightTrackKill;
         }
-
-        victimInstance = Instantiate (victims, killSpot.transform.position, killSpot.transform.rotation);
+        if (victims != null)
+            victimInstance = Instantiate (victims, killSpot.transform.position, killSpot.transform.rotation);
     }
     public void OnKillTrack ()
     {
@@ -360,8 +404,6 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine (MadeIncorrectDecision ());   
         }
-
-        dilemmaIndex++;
     }
     private IEnumerator MadeCorrectDecision ()
     {
@@ -390,11 +432,21 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        QueueDialogues (dialogueStrings);
+        
 
-        yield return new WaitUntil (() => !dialogueActive);
+        dilemmaIndex++;
 
-        StartCoroutine (InitiateDilemma (dilemmaIndex));
+        if (dilemmaIndex < dilemmas.Length)
+        {
+            QueueDialogues (dialogueStrings);
+            yield return new WaitUntil (() => !dialogueActive);
+        }
+        else
+        {
+            QueueFinalDialogues(dialogueStrings);
+        }
+
+        StartCoroutine (InitiateDilemma ());
     }
     private IEnumerator MadeIncorrectDecision ()
     {
@@ -423,11 +475,19 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        QueueDialogues (dialogueStrings);
+        dilemmaIndex++;
 
-        yield return new WaitUntil (() => !dialogueActive);
+        if (dilemmaIndex < dilemmas.Length)
+        {
+            QueueDialogues (dialogueStrings);
+            yield return new WaitUntil (() => !dialogueActive);
+        }
+        else
+        {
+            QueueFinalDialogues(dialogueStrings);
+        }
 
-        StartCoroutine (InitiateDilemma (dilemmaIndex));
+        StartCoroutine (InitiateDilemma ());
     }
     private IEnumerator PerformDialogue ()
     {
@@ -458,11 +518,40 @@ public class GameManager : MonoBehaviour
         
         dialogueActive = false;
     }
+    private IEnumerator PerformOutroDialogue ()
+    {
+        dialogueActive = true;
+        GetComponent<AudioSource>().clip = audio_Outro;
+        GetComponent<AudioSource>().Play();
+
+        while (dialogueQueue.Count > 0)
+        {
+            mutexLock.WaitOne ();
+            LocalizedString dialogueLocaleString = dialogueQueue.Dequeue ();
+            string dialogueString = dialogueLocaleString.GetLocalizedString ();
+            mutexLock.ReleaseMutex();
+
+            ui_EndGame.SetActive (true);
+            txt_SubtitleTextNoSpeaker.text = dialogueString;
+            anim_SubtitleNoSpeaker.Play ("SubtitleNoSpeakerIn");
+            float subtitleDuration = GetSubtitleDuration (dialogueString) + 1;
+
+            yield return new WaitForSeconds (subtitleDuration);
+        
+            anim_SubtitleNoSpeaker.Play ("SubtitleNoSpeakerOut");
+
+            yield return new WaitForSeconds (2f);
+        }
+
+        dialogueActive = false;
+    }
     private void PerformDilemma (int index)
     {
         txt_DilemmaNumber.text = String.Format ("{0} {1}", GetLocaleString (LocaleTables.General, "Dilemma"), index + 1);
         txt_DilemmaTitle.text = currentDilemma.title.GetLocalizedString();
         anim_UIIntroAnimation.Play();
+        GetComponent<AudioSource>().clip = audio_DilemmaIntro;
+        GetComponent<AudioSource>().Play();
     }
     private void QueueDialogue (LocalizedString dialogue)
     {
@@ -488,6 +577,17 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine (PerformDialogue());
         }
+    }
+    private void QueueFinalDialogues (LocalizedString[] dialogues)
+    {
+        mutexLock.WaitOne();
+        foreach (LocalizedString dialogue in dialogues)
+        {
+            dialogueQueue.Enqueue (dialogue);
+        }
+        mutexLock.ReleaseMutex();
+
+        StartCoroutine (PerformOutroDialogue());
     }
     private string GetLocaleString (LocaleTables table, string entry)
     {

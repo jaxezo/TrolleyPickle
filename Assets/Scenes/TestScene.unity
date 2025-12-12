@@ -1001,6 +1001,11 @@ PrefabInstance:
       objectReference: {fileID: 1978897282}
     - target: {fileID: 7644478954590651842, guid: 892c18f417aece942bc0461087c5cc8f,
         type: 3}
+      propertyPath: dilemmaIndex
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7644478954590651842, guid: 892c18f417aece942bc0461087c5cc8f,
+        type: 3}
       propertyPath: anim_Subtitle
       value: 
       objectReference: {fileID: 248076741}

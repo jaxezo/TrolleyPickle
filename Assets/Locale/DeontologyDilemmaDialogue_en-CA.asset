@@ -124,7 +124,8 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 1733897606914048
     m_Localized: "Yeah, I figured as much. It is your duty to avoid a completely
-      preventable death, if preventing it doesn\u2019t compromise another duty."
+      preventable death, as long as preventing it doesn\u2019t compromise another
+      duty."
     m_Metadata:
       m_Items: []
   - m_Id: 1734250444349440

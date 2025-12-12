@@ -18,7 +18,7 @@ public static class EthicalFrameworks
             case Frameworks.Utilitarianism:
                 return "Utilitarianism";
             case Frameworks.Care:
-                return "Feminist Ethics of Care";
+                return "Ethics of Care";
             default:
                 return "ERR";
         }

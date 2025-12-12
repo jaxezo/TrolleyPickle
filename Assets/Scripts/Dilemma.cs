@@ -20,5 +20,4 @@ public class FrameworkResponse
     public EthicalFrameworks.Frameworks framework;
     public LocalizedString[] correctTexts;
     public LocalizedString[] incorrectTexts;
-    public LocalizedString alternateText;
 }

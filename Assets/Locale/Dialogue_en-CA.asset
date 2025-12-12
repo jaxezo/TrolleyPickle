@@ -32,7 +32,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4393463775748096
-    m_Localized: Evening the Odds
+    m_Localized: Even the Odds
     m_Metadata:
       m_Items: []
   - m_Id: 4393526749028352
@@ -114,17 +114,17 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 6063215015354368
-    m_Localized: On your tracks is a baby! This will surely throw a wrench into your
+    m_Localized: On your track is a baby! This will surely throw a wrench into your
       calculations. Who are you going to save?
     m_Metadata:
       m_Items: []
   - m_Id: 6063399606673408
-    m_Localized: THE Baby
+    m_Localized: '"THE" Baby'
     m_Metadata:
       m_Items: []
   - m_Id: 6063479009042432
     m_Localized: "Let\u2019s change things up a bit. In front of you there are 10
-      adults tied to it."
+      adults tied to the track."
     m_Metadata:
       m_Items: []
   - m_Id: 6063828126130176
@@ -136,7 +136,7 @@ MonoBehaviour:
     m_Localized: "How much will this affect your decision making? On the one hand
       it\u2019s a baby, but on the other hand, this baby may or may not grow up to
       be the Hitler we know. Will you take the chance to prevent a genocide, or will
-      other moral theories shine through?"
+      another moral theory shine through?"
     m_Metadata:
       m_Items: []
   - m_Id: 6064068229062656

@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class MenuManager : MonoBehaviour
 {
@@ -39,5 +38,9 @@ public class MenuManager : MonoBehaviour
         yield return new WaitForSeconds (anim_GameStart.GetClip("MenuStart").length);
 
         SceneManager.LoadScene (1);
+    }
+    public void OnEscape (InputAction.CallbackContext context)
+    {
+        Application.Quit();
     }
 }

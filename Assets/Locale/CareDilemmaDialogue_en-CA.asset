@@ -19,15 +19,280 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 17192828526592
-    m_Localized: Placehodler1
+    m_Localized: 'I will admit, this is a difficult framework to apply in this scenario,
+      but I agree that this is the most valid choice. '
     m_Metadata:
       m_Items: []
   - m_Id: 17235602038784
-    m_Localized: Placehuolder2
+    m_Localized: "You have no relationships with any of the individuals, and there
+      are no special needs or vulnerabilities, and empathy doesn\u2019t lead one
+      way or another."
     m_Metadata:
       m_Items: []
   - m_Id: 17255147495424
-    m_Localized: Paclehudler3
+    m_Localized: Instead, you could think about how you would be personally affected
+      if you pulled the lever. You would be personally sacrificing one person, which
+      may violate your need for self-care above all, since you can only care for
+      others after you care for yourself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1745522355331072
+    m_Localized: "I\u2019ll admit, ethics of care is a difficult framework to apply
+      to this scenario, but I would say it\u2019s best to not sacrifice the one."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1745620162306048
+    m_Localized: Think about this, you are actively diverting the track to sacrifice
+      the one person to save five. How will the burden of actively killing someone
+      affect your own self-care? How will that psychologically and emotionally affect
+      you?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1745822893989888
+    m_Localized: "Once again a difficult situation to apply this framework to, but
+      like last time the correct answer is to think about yourself and your self-care.
+      Don\u2019t worry, we\u2019ll mix things up for the next one."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1745919123906560
+    m_Localized: "This dilemma is very similar to the last, therefore the reasoning
+      should be the same. Think about your own self care in these simple situations.
+      Don\u2019t worry, we\u2019re going to mix things up in the next dilemma, so
+      ethics of care is better utilized.\u2003"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746035897524224
+    m_Localized: "You\u2019ve identified that the baby is far more vulnerable than
+      the adults. The baby is totally dependant and in the greatest need of protection.
+      Not to mention empathizing would also favor the baby. The baby requires the
+      most care, and it would take a toll on you if you didn\u2019t help it."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746387589914624
+    m_Localized: This one is a tricky one, but I would say it would be best to sacrifice
+      the five adults to save the baby. The baby is a fully dependent person that
+      is in the greatest need of protection.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746485086511104
+    m_Localized: "Despite the fact that the baby may grow up and cause a genocide,
+      it\u2019s still a helpless, fully dependent, vulnerable baby that requires
+      the most care. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746582700548096
+    m_Localized: "Even though that is baby Hitler, you\u2019ve got to remember one
+      thing:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746610290679808
+    m_Localized: "It\u2019s a baby. A baby that\u2019s fully dependent, helpless,
+      and vulnerable."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746628548485120
+    m_Localized: Therefore, sacrificing a baby to save ten people is not providing
+      the most care in this situation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746717534838784
+    m_Localized: This is probably the most clear-cut decision yet!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746755463929856
+    m_Localized: 'Ethics of care emphasizes relationships, and you have a relationship
+      in this scenario! '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746790511534080
+    m_Localized: Out of all the dilemmas, this should have been the easiest for ethics
+      of care; there is an actual relationship going on here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746822937698304
+    m_Localized: You have a long-standing relationship with your friend. Ethics of
+      care focuses on relationships, empathy, and responsibility. You should have
+      saved your friend.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746924171419648
+    m_Localized: 'You let your morals guide you through the decision. You identified
+      that you have a relationship in this context, albeit a negative one. '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1746960829636608
+    m_Localized: "Despite the negative relationship, your worst enemy is still in
+      immediate danger, vulnerable, and can\u2019t save themselves. "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747015343005696
+    m_Localized: Therefore, the best way to handle this scenario with care is to
+      maintain your moral integrity and save your enemy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747080266637312
+    m_Localized: "You let your emotions get to you, didn\u2019t you? I know ethics
+      of care focuses on relationships, but just because you have a bad relationship
+      doesn\u2019t mean you kill them."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747186789376000
+    m_Localized: 'You should remember to think about yourself: is killing someone
+      really a caring action?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747251402629120
+    m_Localized: You made the difficult decision, identifying the children are more
+      vulnerable than you, that they have a greater need than you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747323720818688
+    m_Localized: "They can\u2019t understand the danger, nor act or protect themselves.
+      Therefore, the caring act was to sacrifice yourself instead."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747365198290944
+    m_Localized: "But we\u2019re not done here."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747376204144640
+    m_Localized: "We\u2019ve got more dilemmas to cover!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747387117723648
+    m_Localized: "I\u2019m glad to see you\u2019re good a sticking to your morals.
+      Let\u2019s see if you can keep this up."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747568840138752
+    m_Localized: "While it is true that you should care for yourself, you failed
+      to identify that the five children are more vulnerable than you. The children
+      can\u2019t understand the danger, act for themselves, or even protect themselves."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747663157452800
+    m_Localized: You sacrificing them compromises your morals, your caring identity
+      is tarnished and will suffer long-lasting guilt.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747733609177088
+    m_Localized: On the bright side, you can still redeem yourself, since we still
+      have dilemmas left!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747776793731072
+    m_Localized: I hope this was a valuable lesson.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1747799438778368
+    m_Localized: "As we\u2019ve established previously, children are vulnerable and
+      dependent. Five children is a lot of vulnerable."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748049712898048
+    m_Localized: "The filing cabinet was filled with papers and stuff. Just an abstract
+      item that doesn\u2019t compete with human beings."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748077076537344
+    m_Localized: It was best to save the children, since that is an immediate need.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748148224516096
+    m_Localized: "You failed to care for the children, which we\u2019ve discussed
+      previously as vulnerable and dependent, requiring the most care."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748249181413376
+    m_Localized: A filing cabinet with abstract items in it like papers and data
+      does not require care.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748319310176256
+    m_Localized: You must respond to the immediate needs of the people you are presented
+      with.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748399421382656
+    m_Localized: "So, the donations to end world hunger didn\u2019t sway you, didn\u2019t
+      it? Well, from an ethics of care perspective, I agree with you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748474520395776
+    m_Localized: 'Think about it this way: The ten strangers tied on the other track
+      are vulnerable, much like the billionaire. But the billionaire is already socially
+      powerful and autonomous.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748559467634688
+    m_Localized: You have the responsibility to care for those who are more helpless
+      and dependent, such as the ten strangers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748798442299392
+    m_Localized: Hundreds of millions of dollars to fight world hunger is a noble
+      effort, but you failed to care for those most vulnerable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748942105600000
+    m_Localized: "Think about this: The ten strangers are vulnerable, much like the
+      billionaire. However, the billionaire already has lots of social power. The
+      ten strangers don\u2019t have this sort of support."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748946966798336
+    m_Localized: "The billionaire is trying to save himself with his economic and
+      social status, whereas the strangers don\u2019t have this power. They are dependent
+      on you."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1748957104431104
+    m_Localized: Ethics of care focuses on relationships, empathy, and responsibility.
+      You are responsible in caring for those who need it most.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749126160048128
+    m_Localized: You decided to save the helpless child.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749166425366528
+    m_Localized: Your home, your community, your friends benefit from the suffering
+      of this child.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749184393764864
+    m_Localized: But the child is more immediately vulnerable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749197526130688
+    m_Localized: The child is saved, but paradise falls.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749236868702208
+    m_Localized: You decided to return to paradise.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749275112366080
+    m_Localized: You return to your home, your community, your friends.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749287338762240
+    m_Localized: "But you aren\u2019t whole."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749296562036736
+    m_Localized: "You\u2019re burdened by the knowledge that paradise is powered
+      by the suffering of a child you could have saved."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749323871150080
+    m_Localized: But you broke your moral obligations and did not care for the one
+      who needed it most.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1749358839062528
+    m_Localized: The child remains tortured, you lose your caring self, but paradise
+      persists.
     m_Metadata:
       m_Items: []
   references:
