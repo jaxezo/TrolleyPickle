@@ -1,6 +1,8 @@
 # Trolley Pickle
 
-## Description
+## About The Project
+
+### Description
 The game takes place in a 3D game environment where the player begins in a trolley 
 racing down the tracks through a hilly terrain. Prior to starting, players must choose from a 
 dropdown menu one of three ethical frameworks: Deontology, Utilitarianism, or Ethics of 
@@ -19,6 +21,9 @@ There is a total of ten dilemmas presented in sequence, each designed to challen
 player’s ethical reasoning. At the end of the game, the player is presented with feedback on 
 how many decisions were aligned with the chosen framework and how many decisions 
 aligned with the other frameworks.
+
+### Built With
+Unity Engine
 
 ## Installation
 1. Download TrolleyPickle.zip from [releases](https://github.com/jaxezo/TrolleyPickle/releases)
