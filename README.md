@@ -32,3 +32,9 @@ Unity Engine
 
 ## License
 MIT License
+
+## Credits
+["Epic Intro Music" By David Fesliyan](https://www.fesliyanstudios.com/royalty-free-music/download/epic-intro-music/87)
+["Dramatic Scene Ending 1" By David Fesliyan](https://www.fesliyanstudios.com/royalty-free-music/download/dramatic-scene-ending-1/70)
+["Urban Gauntlet" Kevin MacLeod (incompetech.com)](https://incompetech.com/music/royalty-free/music.html)
+["Low-Poly Tram Downloadable" by Libau Media](https://skfb.ly/6TZNU)
